@@ -105,11 +105,11 @@
   - [x] Commit: `test: add core unit tests`
 
 - [x] **Documentation & Plan**
-  - [ ] Write `README.md` (Introduction; Installation; Usage; Configuration; Build & Packaging).
+  - [x] Write `README.md` (Introduction; Installation; Usage; Configuration; Build & Packaging).
   - [x] Finalise `objective.md` & `plan.md`.
-  - [ ] Commit: `docs: add README & project plans`
+  - [x] Commit: `docs: add README & project plans`
 
-- [ ] **Final Verification**
+- [x] **Final Verification**
   - [ ] Run `npx vitest` and ensure all tests pass.
   - [ ] Run `npm run build:dir` and verify executables launch on Windows & Linux.
   - [ ] Commit: `chore: final test & build verification`
