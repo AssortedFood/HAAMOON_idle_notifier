@@ -10,7 +10,7 @@
     - [x] Configure `"linux": { "target": ["AppImage","deb"] }`
   - [x] Commit: `build: configure electron-builder`
 
-- [ ] **Final Verification**
-  - [ ] Run `npx vitest` and ensure all tests pass.
-  - [ ] Run `npm run build:dir` and verify unpacked executables launch on Windows & Linux.
-  - [ ] Commit: `chore: final test & build verification`
+- [x] **Final Verification**
+  - [x] Run `npx vitest` and ensure all tests pass.
+  - [x] Run `npm run build:dir` and verify unpacked executables launch on Windows & Linux.
+  - [x] Commit: `chore: final test & build verification`

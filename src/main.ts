@@ -28,7 +28,12 @@ async function checkLoop() {
     console.log(title);
     const state = classify(title, cfg);
     if (!hasStateChanged(state)) return;
-    await playAudio(path.join(__dirname, '../audio', cfg.audio[state]));
+    const audioKey = state === 'studying'
+      ? 'good'
+      : state === 'gaming'
+        ? 'bad'
+        : 'neutral';
+    await playAudio(path.join(__dirname, '../audio', cfg.audio[audioKey]));
     notify(state);
   } catch (error) {
     console.error('Unhandled error in checkLoop:', error);

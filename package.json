@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "dist/main.js",
   "scripts": {
-    "build": "electron-builder",
-    "build:dir": "electron-builder --dir",
+    "build": "tsc && electron-builder",
+    "build:dir": "tsc && electron-builder --dir",
     "start": "electron .",
     "test": "vitest"
   },
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/AssortedFood/HAAMOON_idle_notifier#readme",
   "description": "",
   "devDependencies": {
+    "electron": "^35.2.1",
     "electron-builder": "^26.0.12",
     "eslint": "^9.25.1",
     "ts-node": "^10.9.2",
@@ -30,7 +31,6 @@
   },
   "dependencies": {
     "active-win": "^8.2.1",
-    "electron": "^35.2.1",
     "play-sound": "^1.1.6"
   },
   "build": {
