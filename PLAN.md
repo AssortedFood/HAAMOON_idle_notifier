@@ -94,17 +94,17 @@
     - [x] Configure `"linux": { "target":["AppImage","deb"] }`
   - [x] Commit: `build: configure electron-builder`
 
-- [ ] **High-Value Unit Tests (Vitest)**
-  - [ ] Create `tests/config.spec.ts`:
-    - [ ] Test `loadConfig()` throws on invalid/missing keys.
-    - [ ] Test it returns correct `ConfigSchema`.
-  - [ ] Create `tests/classifier.spec.ts`:
-    - [ ] Test `classify()` output for sample titles.
-  - [ ] Create `tests/state.spec.ts`:
-    - [ ] Test `hasStateChanged()` only true on actual state changes.
-  - [ ] Commit: `test: add core unit tests`
+- [x] **High-Value Unit Tests (Vitest)**
+  - [x] Create `tests/config.spec.ts`:
+    - [x] Test `loadConfig()` throws on invalid/missing keys.
+    - [x] Test it returns correct `ConfigSchema`.
+  - [x] Create `tests/classifier.spec.ts`:
+    - [x] Test `classify()` output for sample titles.
+  - [x] Create `tests/state.spec.ts`:
+    - [x] Test `hasStateChanged()` only true on actual state changes.
+  - [x] Commit: `test: add core unit tests`
 
-- [ ] **Documentation & Plan**
+- [x] **Documentation & Plan**
   - [ ] Write `README.md` (Introduction; Installation; Usage; Configuration; Build & Packaging).
   - [x] Finalise `objective.md` & `plan.md`.
   - [ ] Commit: `docs: add README & project plans`
