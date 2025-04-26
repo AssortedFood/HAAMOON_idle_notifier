@@ -1,4 +1,5 @@
 // src/main.ts
+import './tray';   // ← ensure tray.ts runs
 import { app } from 'electron';
 import path from 'path';
 import activeWin from 'active-win';

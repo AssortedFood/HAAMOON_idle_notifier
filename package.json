@@ -1,6 +1,7 @@
 {
   "name": "haamoon_idle_notifier",
   "version": "1.0.0",
+  "description": "A cross-platform Electron tray app that monitors your active window and plays audio on state change",
   "main": "dist/main.js",
   "scripts": {
     "start": "electron dev-main.js",
@@ -20,7 +21,6 @@
     "url": "https://github.com/AssortedFood/HAAMOON_idle_notifier/issues"
   },
   "homepage": "https://github.com/AssortedFood/HAAMOON_idle_notifier#readme",
-  "description": "",
   "devDependencies": {
     "electron": "^35.2.1",
     "electron-builder": "^26.0.12",
@@ -31,25 +31,33 @@
   },
   "dependencies": {
     "active-win": "^8.2.1",
-    "play-sound": "^1.1.6",
-    "sound-play": "^1.1.0"
+    "play-sound": "^1.1.6"
   },
   "build": {
     "appId": "com.example.study-game-monitor",
     "files": [
       "dist/**/*",
-      "config/**/*",
       "audio/**/*",
-      "assets/**/*"
+      "assets/**/*",
+      "dev-main.js"
+    ],
+    "extraResources": [
+      {
+        "from": "config/",
+        "to": "config",
+        "filter": ["**/*"]
+      }
     ],
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "assets/icon.ico"
     },
     "linux": {
       "target": [
         "AppImage",
         "deb"
-      ]
+      ],
+      "icon": "assets/icon.png"
     }
   }
 }
