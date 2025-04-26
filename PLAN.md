@@ -110,6 +110,6 @@
   - [x] Commit: `docs: add README & project plans`
 
 - [x] **Final Verification**
-  - [ ] Run `npx vitest` and ensure all tests pass.
-  - [ ] Run `npm run build:dir` and verify executables launch on Windows & Linux.
-  - [ ] Commit: `chore: final test & build verification`
+  - [x] Run `npx vitest` and ensure all tests pass.
+  - [x] Run `npm run build:dir` and verify executables launch on Windows & Linux.
+  - [x] Commit: `chore: final test & build verification`
