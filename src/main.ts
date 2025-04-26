@@ -1,12 +1,26 @@
 import path from 'path';
+import activeWin from 'active-win';
 import { loadConfig } from './config';
 import { classify } from './classifier';
 import { hasStateChanged } from './state';
-import { fetchActiveTitle } from './main';
+// Using active-win to fetch the active window title; fetchActiveTitle implemented below
 import { playAudio } from './audioPlayer';
 import { notify } from './notifier';
 
 const cfg = loadConfig();
+
+/**
+ * Fetch the active window title using active-win.
+ */
+async function fetchActiveTitle(): Promise<string> {
+  try {
+    const win = await activeWin();
+    return win?.title ?? '';
+  } catch (error) {
+    console.error('Error fetching active window title:', error);
+    return '';
+  }
+}
 
 async function checkLoop() {
   try {
