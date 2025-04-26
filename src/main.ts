@@ -1,5 +1,5 @@
 // src/main.ts
-import { app } from 'electron';           // ← import app
+import { app } from 'electron';
 import path from 'path';
 import activeWin from 'active-win';
 import { loadConfig } from './config';
@@ -8,15 +8,22 @@ import { hasStateChanged } from './state';
 import { playAudioDataUri } from './audioPlayer';
 import { notify } from './notifier';
 
+// Prevent the app quitting when all (offscreen) windows close
+app.on('window-all-closed', () => {
+  // no-op to keep the process alive
+});
+
 const cfg = loadConfig();
 
 /**
- * Fetch the active window title using active-win.
+ * Fetch the active window title using active-win,
+ * and log the full window info for debugging.
  */
 async function fetchActiveTitle(): Promise<string> {
   try {
-    const win = await activeWin();
-    return win?.title ?? '';
+    const winInfo = await activeWin();
+    console.log('👉 Active window info:', winInfo);
+    return winInfo?.title ?? '';
   } catch (error) {
     console.error('Error fetching active window title:', error);
     return '';
@@ -26,29 +33,37 @@ async function fetchActiveTitle(): Promise<string> {
 async function checkLoop() {
   try {
     const title = await fetchActiveTitle();
-    console.log(title);
     const state = classify(title, cfg);
-    if (!hasStateChanged(state)) return;
+    console.log(`🔍 classify() returned state="${state}" for title="${title}"`);
 
-    const audioKey = state === 'studying'
-      ? 'good'
-      : state === 'gaming'
-        ? 'bad'
-        : 'neutral';
-    const fileName = cfg.audio[audioKey];
+    if (!hasStateChanged(state)) {
+      console.log('⏭  State unchanged, skipping audio');
+      return;
+    }
 
-    await playAudioDataUri(fileName);
+    // Only play audio for 'studying' or 'gaming'
+    if (state === 'studying' || state === 'gaming') {
+      const audioKey = state === 'studying' ? 'good' : 'bad';
+      const fileName = cfg.audio[audioKey];
+      console.log(`🔈 Playing audio: key=${audioKey}, file="${fileName}"`);
+      await playAudioDataUri(fileName);
+    } else {
+      console.log('🔇 Neutral state detected, no audio playback');
+    }
+
+    // Always send a system notification
     notify(state);
   } catch (error) {
     console.error('Unhandled error in checkLoop:', error);
   }
 }
 
-// Only start looping once app is initialised
+// Only start looping once the app is initialised
 app.whenReady().then(() => {
+  console.log('✅ App ready, starting monitoring loop');
   checkLoop();
   setInterval(checkLoop, 5000);
 });
 
-// In case of any unhandled promise rejections
+// Catch any unhandled promise rejections
 process.on('unhandledRejection', err => console.error(err));
