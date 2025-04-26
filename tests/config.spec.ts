@@ -16,12 +16,9 @@ describe('loadConfig', () => {
   });
 
   it('returns correct ConfigSchema', () => {
+    const expected = JSON.parse(originalConfig) as ConfigSchema;
     const cfg = loadConfig();
-    expect(cfg).toEqual<ConfigSchema>({
-      studying: [],
-      gaming: [],
-      audio: { good: 'good.mp3', bad: 'bad.mp3', neutral: 'neutral.mp3' },
-    });
+    expect(cfg).toEqual(expected);
   });
 
   it('throws on missing studying', () => {

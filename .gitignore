@@ -1,3 +1,33 @@
+# Node modules & lockfiles
 node_modules/
 package-lock.json
+yarn.lock
+
+# Env files
 .env*
+  
+# Build outputs
+dist/
+out/
+build/
+coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs / editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Misc
+*.log

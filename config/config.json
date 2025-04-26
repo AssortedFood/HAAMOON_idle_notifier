@@ -1,6 +1,17 @@
 {
-  "studying": [],
-  "gaming": [],
+  "studying": [
+    "VSCode",
+    "Birkbeck",
+    "Moodle",
+    "Excel"
+  ],
+  "gaming": [
+    "Lichess",
+    "Pokemon",
+    "Runelite",
+    "SSBM",
+    "Dolphin"
+  ],
   "audio": {
     "good": "good.mp3",
     "bad": "bad.mp3",

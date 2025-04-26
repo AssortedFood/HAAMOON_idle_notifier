@@ -1,4 +1,4 @@
-# Study/Game Monitor
+# HAAMOON idle notifier
 
 An Electron application that monitors your active window titles and classifies them as "studying", "gaming", "mixed" or "none". It plays audio notifications and integrates with the system tray for seamless monitoring.
 

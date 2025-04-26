@@ -6,7 +6,7 @@
     "build": "tsc && electron-builder",
     "build:dir": "tsc && electron-builder --dir",
     "start": "electron .",
-    "test": "vitest"
+    "test": "vitest run tests/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
