@@ -1,33 +1,32 @@
-# HAAMOON idle notifier
+<p align="center">
+  <a href="https://shields.io/">
+    <img src="https://img.shields.io/badge/made%20for-procrastinators-lightgrey" alt="made for procrastinators">
+  </a>
+  <a href="https://shields.io/">
+    <img src="https://img.shields.io/badge/stability-somewhat-orange" alt="stability somewhat">
+  </a>
+  <a href="https://shields.io/">
+    <img src="https://img.shields.io/badge/time%20wasted-a%20little-green" alt="time wasted a little">
+  </a>
+</p>
 
-An Electron application that monitors your active window titles and classifies them as "studying", "gaming", "mixed" or "none". It plays audio notifications and integrates with the system tray for seamless monitoring.
+# ✨ HAAMOON idle notifier
 
-## Installation
+An Electron application that monitors your active window titles and classifies them as "studying" or "gaming" based on the `config.json` file. It plays helpful and motivational audio notifications to encourage you to spend more time studying and less time gaming.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/AssortedFood/HAAMOON_idle_notifier.git
-   cd HAAMOON_idle_notifier
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+## 📥 Installation
 
-## Usage
+Download the Windows installer: 
 
-Start the application in development mode:
-```bash
-npm start
-```
+[haamoon_idle_notifier.Setup.1.0.0.exe](https://github.com/AssortedFood/HAAMOON_idle_notifier/releases/download/latest/haamoon_idle_notifier.Setup.1.0.0.exe)
 
-## Configuration
+## ⚙️ Configuration
 
 Edit the configuration file at `config/config.json` to specify keywords:
 ```json
 {
-  "studying": ["lecture", "paper", "code"],
-  "gaming": ["game", "play", "match"],
+  "studying": ["Google Chrome", "Excel", "Visual Studio Code"],
+  "gaming": ["Dolphin", "Runelite", "lichess"],
   "audio": {
     "good": "good.mp3",
     "bad": "bad.mp3",
@@ -35,13 +34,12 @@ Edit the configuration file at `config/config.json` to specify keywords:
   }
 }
 ```
-Place your audio files in the `audio/` directory.
 
-## Build & Packaging
 
-Use Electron Builder to package the app:
-```bash
-npm run build      # Build installers/packages
-npm run build:dir  # Build unpacked dir
-```
-Artifacts will be available in the `dist/` folder.
+If you want to replace the audio files you can do that by replacing the files `good.mp3` and `bad.mp3` in the `audio/` folder.
+
+*This version of the application does not support neutral motivation, only good and bad.*
+
+## 📝 Licence
+
+This project is licensed under the terms described in the [LICENSE.md](./LICENSE.md) file.
