@@ -1,10 +1,11 @@
+// src/main.ts
+import { app } from 'electron';           // ← import app
 import path from 'path';
 import activeWin from 'active-win';
 import { loadConfig } from './config';
 import { classify } from './classifier';
 import { hasStateChanged } from './state';
-// Using active-win to fetch the active window title; fetchActiveTitle implemented below
-import { playAudio } from './audioPlayer';
+import { playAudioDataUri } from './audioPlayer';
 import { notify } from './notifier';
 
 const cfg = loadConfig();
@@ -28,20 +29,26 @@ async function checkLoop() {
     console.log(title);
     const state = classify(title, cfg);
     if (!hasStateChanged(state)) return;
+
     const audioKey = state === 'studying'
       ? 'good'
       : state === 'gaming'
         ? 'bad'
         : 'neutral';
-    await playAudio(path.join(__dirname, '../audio', cfg.audio[audioKey]));
+    const fileName = cfg.audio[audioKey];
+
+    await playAudioDataUri(fileName);
     notify(state);
   } catch (error) {
     console.error('Unhandled error in checkLoop:', error);
   }
 }
 
-checkLoop();
-setInterval(checkLoop, 5000);
+// Only start looping once app is initialised
+app.whenReady().then(() => {
+  checkLoop();
+  setInterval(checkLoop, 5000);
+});
 
+// In case of any unhandled promise rejections
 process.on('unhandledRejection', err => console.error(err));
-
