@@ -1,0 +1,9 @@
+{
+  "studying": [],
+  "gaming": [],
+  "audio": {
+    "good": "good.mp3",
+    "bad": "bad.mp3",
+    "neutral": "neutral.mp3"
+  }
+}
