@@ -29,5 +29,16 @@
     "active-win": "^8.2.1",
     "electron": "^35.2.1",
     "play-sound": "^1.1.6"
+  },
+  "build": {
+    "appId": "com.example.study-game-monitor",
+    "files": [
+      "dist/**/*",
+      "config/**/*",
+      "audio/**/*",
+      "assets/**/*"
+    ],
+    "win": { "target": "nsis" },
+    "linux": { "target": ["AppImage", "deb"] }
   }
 }

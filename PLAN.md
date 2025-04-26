@@ -86,13 +86,13 @@
     - [x] `tray.setContextMenu(Menu.buildFromTemplate([ { label: 'Open config', click: () => {/*…*/} }, { type: 'separator' }, { role: 'quit' } ]))`
   - [x] Commit: `feat: tray integration`
 
-- [ ] **Packaging with Electron-Builder**
-  - [ ] In `package.json`, under `"build"`:
-    - [ ] Set `"appId": "com.example.study-game-monitor"`
-    - [ ] Specify `"files": ["dist/**/*","config/**/*","audio/**/*","assets/**/*"]`
-    - [ ] Configure `"win": { "target":"nsis" }`
-    - [ ] Configure `"linux": { "target":["AppImage","deb"] }`
-  - [ ] Commit: `build: configure electron-builder`
+- [x] **Packaging with Electron-Builder**
+  - [x] In `package.json`, under `"build"`:
+    - [x] Set `"appId": "com.example.study-game-monitor"`
+    - [x] Specify `"files": ["dist/**/*","config/**/*","audio/**/*","assets/**/*"]`
+    - [x] Configure `"win": { "target":"nsis" }`
+    - [x] Configure `"linux": { "target":["AppImage","deb"] }`
+  - [x] Commit: `build: configure electron-builder`
 
 - [ ] **High-Value Unit Tests (Vitest)**
   - [ ] Create `tests/config.spec.ts`:
