@@ -1,0 +1,33 @@
+{
+  "name": "haamoon_idle_notifier",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AssortedFood/HAAMOON_idle_notifier.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AssortedFood/HAAMOON_idle_notifier/issues"
+  },
+  "homepage": "https://github.com/AssortedFood/HAAMOON_idle_notifier#readme",
+  "description": "",
+  "devDependencies": {
+    "electron-builder": "^26.0.12",
+    "eslint": "^9.25.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  },
+  "dependencies": {
+    "active-win": "^8.2.1",
+    "electron": "^35.2.1",
+    "play-sound": "^1.1.6"
+  }
+}
